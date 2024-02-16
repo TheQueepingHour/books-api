@@ -75,9 +75,9 @@ books.delete('/:id', (req, res) => {
 })
 //Update Book
 books.put('/:id', (req, res) => {
-    Book.findByIdAndUpdate(req.params.id)
+    Book.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then(updatedBook => {
-        res.redirect(`/breads/${req.params.id}`)
+        res.json(updatedBook)
     })
     .catch(err => {
         console.log('err', err)

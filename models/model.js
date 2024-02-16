@@ -6,7 +6,7 @@ const bookSchema = new Schema({
     description: {type: String},
     year: {type: Number},
     quantity: {type: Number},
-    image: {type: String}
+    imageURL: {type: String}
 })
 
 const Book = mongoose.model('Book', bookSchema)
